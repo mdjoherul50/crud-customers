@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
-    <title>Submitted Data</title>
+    <title>CUstomer Details</title>
 </head>
 <body>
 <div class="container mt-5">
@@ -28,7 +28,11 @@
                 <td>{{$customer->email}}</td>
                 <td>{{$customer->phone}}</td>
                 <td>{{$customer->address}}</td>
-                <td> <a class="btn btn-primary" href="">View</a></td>
+                <td class="d-flex"> <a class="btn btn-primary me-2" href="">View</a>
+                  <form action="">
+                    <button class="btn btn-danger " type="submit">Delete</button>
+                  </form>
+                </td>
             </tr>
             @endforeach
         </tbody>

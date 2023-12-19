@@ -22,3 +22,4 @@ Route::get('/customers',[CustomerController::class,'index'])->name('customers.in
 Route::get('/customers/{id}',[CustomerController::class,'show'])->name('customers.show');
 Route::get('/customers/create',[CustomerController::class, 'create'])->name('customers.create');
 Route::post('/customers/store', [CustomerController::class,'store'])->name('customers.store');
+Route::post('/customers/{id}', [CustomerController::class,'destroy'])->name('customers.destroy');
