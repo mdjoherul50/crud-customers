@@ -12,7 +12,7 @@ class CustomerController extends Controller
     }
     public function show($id){
         $customer = Customer::find($id);
-        dd($customer);
+        return view('customers.show', compact('customer'));
       
     }
 
@@ -23,6 +23,16 @@ class CustomerController extends Controller
     public function store(Request $request){
        $data=$request->all();
       Customer::create($data);
+
+    }
+
+    public function edit($id){
+        $customer = Customer::find($id);
+        dd($customer);
+        return view('customers.edit');
+    }
+
+    public function update(){
 
     }
 }
