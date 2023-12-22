@@ -4,25 +4,22 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
-    <title>CUstomer Details</title>
+    <title>Customer Details</title>
 </head>
 <body>
 <div class="container mt-5">
-    <h3>Customers Details</h3>
-<div class="d-flex me-auto"> <a class="btn btn-primary" href="{{route('customers.create')}}">Create Customer</a>
-</div>
+    <h3>View Customer Details</h3>
     <table class="table">
         <thead>
             <tr>
-                <th>ID : {{$customer->id}}</th>
-                <th>Name : {{$customer->name}}</th>
-                <th>Email : {{$customer->email}}</th>
-                <th>Phone : {{$customer->phone}}</th>
-                <th>Address : {{$customer->address}}</th>
+                <td> {{$customer->id}}</td>
+                <td> {{$customer->name}}</td>
+                <td>{{$customer->email}}</td>
+                <td>{{$customer->phone}}</td>
+                <td>{{$customer->address}}</td>
             </tr>
         </thead>
         <tbody>
-            
         </tbody>
     </table>
 </div>

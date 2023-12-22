@@ -17,18 +17,18 @@ class CustomerController extends Controller
         dd($customer);
         // return view('customers.show',compact('customer'));
     }
- 
+
     public function create(){
 
         return view('customers.create');
     }
-   
+
     public function store(Request $request){
        $data=$request->all();
       Customer::create($data);
       return redirect()->route('customers.index');
     }
-   
+
     public function edit($id){
        $customer = Customer::find($id);
     //    dd($customer);
@@ -36,7 +36,7 @@ class CustomerController extends Controller
     }
 
     public function update($id, Request $request){
-    
+
      $customer= Customer::find($id);
 
      $customer->update($request->all());

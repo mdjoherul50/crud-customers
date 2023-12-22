@@ -8,9 +8,12 @@
 </head>
 <body>
 <div class="container mt-5">
-    <h3>Customers Details</h3>
-<div class="d-flex me-auto"> <a class="btn btn-primary" href="{{route('customers.create')}}">Create Customer</a>
-</div>
+    <div class="d-flex justify-content-between">
+    <div class="display-3">Customers Details</div>
+        <div>
+            <a href="{{route('customers.create')}}" class="btn btn-primary mt-5">Create Customer</a>
+        </div>
+    </div>
     <table class="table">
         <thead>
             <tr>
@@ -30,12 +33,13 @@
                 <td>{{$customer->email}}</td>
                 <td>{{$customer->phone}}</td>
                 <td>{{$customer->address}}</td>
-                <td class="d-flex"> <a class="btn btn-primary me-2" href="{{ url('/customers/'. $customer->id) }}">View</a>
-                    <a class="btn btn-primary me-2" href="{{url('/customers/'.$customer->id.'/edit')}}">Edit</a>
-                    <form action="{{ route('customers.destroy', $customer->id) }}" method="post">
-                        @csrf
-                        @method('delete')
-                        <button type="submit" class="btn btn-danger">Delete</button>
+                <td class="d-flex d-flex justify-content-around"> <a class="btn btn-primary me-2" href="{{url('/customers/'. $customer->id)}}">View</a>
+                    <a class="btn btn-primary me-2" href="{{url('/customers/'. $customer->id . '/edit' )}}">Edit</a>
+                  <form action="{{url('/customers/'. $customer->id)}}" method="post">
+                    @csrf
+                    @method('DELETE')
+                    <button class="btn btn-danger " type="submit">Delete</button>
+                  </form>
                 </td>
             </tr>
             @endforeach
