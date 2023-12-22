@@ -4,22 +4,24 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
-    <title>Customer Details</title>
+    <title>CUstomer Details</title>
 </head>
 <body>
 <div class="container mt-5">
-    <h3>View Customer Details</h3>
+    <h3>Customers Details</h3>
+</div>
     <table class="table">
         <thead>
-            <tr>
-                <td> {{$customer->id}}</td>
-                <td> {{$customer->name}}</td>
-                <td>{{$customer->email}}</td>
-                <td>{{$customer->phone}}</td>
-                <td>{{$customer->address}}</td>
+            <tr >
+                <h2>ID : {{$customer->id}}</h2>
+                <h2>Name : {{$customer->name}}</h2>
+                <h2>Email : {{$customer->email}}</h2>
+                <h2>Phone : {{$customer->phone}}</h2>
+                <h2>Address : {{$customer->address}}</h2>
             </tr>
         </thead>
         <tbody>
+
         </tbody>
     </table>
 </div>
