@@ -9,6 +9,8 @@
 <body>
 <div class="container mt-5">
     <h3>Customers Details</h3>
+<div class="d-flex me-auto"> <a class="btn btn-primary" href="{{route('customers.create')}}">Create Customer</a>
+</div>
     <table class="table">
         <thead>
             <tr>
@@ -22,16 +24,18 @@
         </thead>
         <tbody>
             @foreach ($customers as $customer)
-            <tr> 
+            <tr>
                 <td> {{$customer->id}}</td>
                 <td> {{$customer->name}}</td>
                 <td>{{$customer->email}}</td>
                 <td>{{$customer->phone}}</td>
                 <td>{{$customer->address}}</td>
-                <td class="d-flex"> <a class="btn btn-primary me-2" href="">View</a>
-                  <form action="">
-                    <button class="btn btn-danger " type="submit">Delete</button>
-                  </form>
+                <td class="d-flex"> <a class="btn btn-primary me-2" href="{{ url('/customers/'. $customer->id) }}">View</a>
+                    <a class="btn btn-primary me-2" href="{{url('/customers/'.$customer->id.'/edit')}}">Edit</a>
+                    <form action="{{ route('customers.destroy', $customer->id) }}" method="post">
+                        @csrf
+                        @method('delete')
+                        <button type="submit" class="btn btn-danger">Delete</button>
                 </td>
             </tr>
             @endforeach
